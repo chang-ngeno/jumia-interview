@@ -1,0 +1,6 @@
+[submodule "jumia-interview-frontend"]
+	path = jumia-interview-frontend
+	url = https://github.com/chang-ngeno/jumia-interview-frontend.git
+[submodule "jumia-interview-backend"]
+	path = jumia-interview-backend
+	url = https://github.com/chang-ngeno/jumia-interview-backend.git

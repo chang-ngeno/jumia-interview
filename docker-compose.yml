@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  backend:
+    build: ./backend/
+    ports:
+      - "8481:8080"
+    restart: always
+    networks:
+      - internal
+  frontend:
+    build: ./front-end/
+    links:
+      - "backend"
+    depends_on:
+      - "backend"
+    ports:
+      - "8480:80"
+    networks:
+      - external
+      - internal
+networks:
+  external:
+    driver: bridge
+  internal:
+    driver: bridge
