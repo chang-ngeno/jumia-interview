@@ -2,14 +2,20 @@ version: "3"
 
 services:
   backend:
-    build: ./backend/
+    container_name: jumia-backend
+    build: ./jumia-interview-backend/
     ports:
       - "8481:8080"
     restart: always
+    environment: # Pass environment variables to the service
+      SPRING_DATASOURCE_URL: jdbc:sqlite:app/db/sample.db
+      SPRING_DATASOURCE_USERNAME: 
+      SPRING_DATASOURCE_PASSWORD: 
     networks:
       - internal
   frontend:
-    build: ./front-end/
+    container_name: jumia-frontend
+    build: ./jumia-interview-frontend/
     links:
       - "backend"
     depends_on:
